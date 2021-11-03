@@ -16,12 +16,12 @@ import week8.controller.BeanConfiguration;
 import week8.repository.ContactRepository;
 
 @SpringBootApplication
-public class Vacationpplication implements CommandLineRunner {
+public class Vacationpplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Vacationpplication.class, args);
 	}
-	@Autowired
+	/*@Autowired
 	ContactRepository repo;
 	
 	@Override
@@ -40,6 +40,6 @@ public class Vacationpplication implements CommandLineRunner {
 		System.out.println(spots.toString());
 		}
 		((AbstractApplicationContext) appContext).close();
-	}
+	}*/
 
 }

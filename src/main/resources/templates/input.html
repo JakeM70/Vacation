@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert new Destination</title>
+</head>
+<body>
+<form th:object="${newDestination}" th:action="@{/update/{id}(id=${newDestination.id})}"  method='POST'>
+Country: <input name="country" size="20" th:field="*{country}"> <br />
+Destination: <input name="desinationName" size="20" th:field="*{desinationName}"><br />
+Rating Out Of 5: <input name="ratingOutOf5" size="5" th:field="*{ratingOutOf5}"><br />
+<input name="submit" type="submit" value="submit"/>
+</form>
+<a href="viewAll">View all Destinations</a>
+</body>
+</html>
