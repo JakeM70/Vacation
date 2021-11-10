@@ -3,9 +3,33 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert new Destination</title>
+
+
+<script type="text/javascript">
+function validate(){
+	let x = document.forms["myForm"]["country"].value;
+	let y = document.forms["myForm"]["desinationName"].value;
+	let z = document.forms["myForm"]["ratingOutOf5"].value;
+	
+	if(x == ""){
+		alert("Please provide country name!");
+		return false;
+	}
+	if(y == ""){
+		alert("Please provide destinaiton name!");
+		return false;
+	}
+	if(z == "" || isNaN(z) || z >5 || z <1){
+			alert("Please provide a rating between the numbers 1 and 5!");
+			return false;
+	}
+}
+
+</script>
+
 </head>
 <body>
-<form th:object="${newDestination}" th:action="@{/update/{id}(id=${newDestination.id})}"  method='POST'>
+<form  name="myForm" th:object="${newDestination}" th:action="@{/update/{id}(id=${newDestination.id})}" onsubmit="return validate()" method='POST' >
 Country: <input name="country" size="20" th:field="*{country}"> <br />
 Destination: <input name="desinationName" size="20" th:field="*{desinationName}"><br />
 Rating Out Of 5: <input name="ratingOutOf5" size="5" th:field="*{ratingOutOf5}"><br />
